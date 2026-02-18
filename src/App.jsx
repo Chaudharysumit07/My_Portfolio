@@ -4,13 +4,13 @@ import React, { useState, useEffect } from 'react';
 // In a real app, you might fetch this from a CMS or API
 const profile = {
   name: 'Sumit Kumar Chaudhary',
-  title: 'Software Development Engineer (he/him) ',
-  title2: 'M.Tech CSE IIT Kanpur(2024)',
+  title: 'Software Development Engineer (he/him)',
+  title2: 'M.Tech CSE, IIT Kanpur (2024)',
   email: 'chaudharysumit130@gmail.com',
   imageUrl: './sumit_photo.png',
   background: './convocation.jpeg',
-  about: "SDE-1 at C3iHub and M.Tech CSE graduate from IIT Kanpur. I build and deploy scalable, production-ready AI and backend systems.My passion is bridging the gap between advanced machine learning models and robust, high-performance software. As a software engineer, I don't just build models; I ship them. In my current role, I have hands-on experience engineering a Generative AI tool from the ground up, moving it from a RAG pipeline concept to a fully deployed, scalable microservice.",
-  resumeUrl: '/Sumit_Resume_sde_1311.pdf', // Path to your resume PDF
+  about: "Software Development Engineer with 1.6+ years of experience and an M.Tech in CSE from IIT Kanpur. I design and deploy backend systems, AI microservices, and real-time security analytics using the Python ecosystem (FastAPI, Docker, PostgreSQL). Currently I'm building a UEBA module from scratch for SOC platforms—using OpenSearch and Bayesian behavioral modeling to detect anomalies in live HIDS logs. I have hands-on experience building Generative AI infrastructure through RAG pipelines and asynchronous data workflows, and I bring a research-oriented approach to solving real-world problems and shipping solutions from scratch. I'm committed to clean code, performance tuning, and tackling daily engineering challenges.",
+  resumeUrl: '/SUMIT_RESUME.pdf',
   socials: {
     github: 'https://github.com/Chaudharysumit07/',
     twitter: '#',
@@ -20,82 +20,88 @@ const profile = {
 
 const experiences = [
   {
-    role: 'Software Development Engineer 1',
-    company: 'C3iHub ',
-    period: '2024 - Present',
-    description: ['Architected and deployed a Generative AI assessment microservice using Docker and FastAPI, supporting policy compliance analysis with a Retrieval-Augmented Generation (RAG) pipeline',
-        'Reduced manual assessment time by 80% and achieved >85% accuracy in compliance detection by leveraging semantic search and text embeddings for analyzing unstructured documents',
-        'Designed and owned the end-to-end data workflow, creating robust API contracts for asynchronous document ingestion, real-time status tracking, and structured JSON output for the frontend.'
+    role: 'Software Development Engineer',
+    company: 'C3iHub',
+    period: 'Jul\'24 - Present',
+    description: [
+      'UEBA Module (SOC Tool): Developing User and Entity Behavior Analytics from scratch for the SOC platform; designing end-to-end architecture for real-time behavioral anomaly detection and integration with security workflows.',
+      'OpenSearch & HIDS Integration: Ingesting live streaming HIDS logs via OpenSearch; implementing anomaly detection for failed login attempts and login-hour deviations for real-time threat visibility.',
+      'Bayesian Behavioral Modeling: Implementing Bayesian inference with conjugate priors to update user behavioral models on the go; maintaining per-user prior distributions and configurable anomaly thresholds for adaptive, learning-based detection.',
+      'Architected and deployed a Generative AI assessment microservice (Docker, FastAPI) with RAG pipeline; reduced manual assessment time by 80% and achieved >85% accuracy in compliance detection.'
     ]
   },
   {
     role: 'Research Scholar Intern',
-    company: 'Center for Developing Intelligent Systems(CDIS) IIT-KANPUR',
+    company: 'Center for Developing Intelligent Systems (CDIS), IIT Kanpur',
     period: 'Jan\'24 - Mar\'24',
     description: [
-        'Developed a retrieval-augmented generation (RAG) pipeline in Python to answer natural language questions over a custom knowledge base (e.g., research papers).',
-        'Utilized sentence-transformer models for creating dense vector embeddings and implemented a FAISS vector index for highly efficient semantic search and retrieval.'
-    ]  }
+      'Developed a retrieval-augmented generation (RAG) pipeline in Python to answer natural language questions over a custom knowledge base (e.g., research papers).',
+      'Utilized sentence-transformer models for dense vector embeddings and implemented a FAISS vector index for highly efficient semantic search and retrieval.'
+    ]
+  }
 ];
 
 const education = [
   {
-    degree: 'Master of Technology(M.Tech), CSE',
-    institution: 'IIT Kanpur',
+    degree: 'Master of Technology (M.Tech), CSE',
+    institution: 'Indian Institute of Technology Kanpur',
     period: '2022 - 2024',
-    description: 'Thesis focused on applying machine learning techniques for network intrusion detection in cybersecurity.'
+    description: 'CPI: 7.71/10. Thesis: DeceptiSense—threat intelligence pipeline and cyber attack pattern recognition.'
   },
-   {
-    degree: 'Bachelor of Technology, CSE',
-    institution: 'MMMUT Gorakhpur',
+  {
+    degree: 'Bachelor of Technology (B.Tech), CSE',
+    institution: 'Madan Mohan Malaviya Univ. of Technology (MMMUT)',
     period: '2017 - 2021',
-    description: 'Graduated with honors, active member of the university coding club.'
+    description: 'CPI: 7.47/10.'
   }
 ];
 
 const projects = [
   {
-    title: 'PolicyBot Auditor',
-    description: 'An AI tool to assist auditors in analyzing  multiple policy documents at once and generates answers to question using a local open source LLM to ensure data privacy with proper explanation and source tagging',
-    tags: ['Python','NLP', 'Gen AI','LLM', 'FastAPI', 'Cybersecurity']
+    title: 'Policy Bot Auditor',
+    description: 'End-to-end RAG microservice (FastAPI, Docker, ChromaDB) for policy compliance analysis. Asynchronous ingestion via WebSockets, multi-tenant data isolation, and exact source citations (page/section)—reducing manual audit overhead by ~80%.',
+    tags: ['Python', 'NLP', 'Gen AI', 'LLM', 'FastAPI', 'ChromaDB', 'Docker', 'WebSockets'],
+    githubUrl: 'https://github.com/Chaudharysumit07/PolicyBot_Auditor'
   },
   {
-    title: 'DeceptiSense: Cyber Attack Pattern Recognition (M.Tech Thesis)',
-    description: 'Engineered a scalable, end-to-end data pipeline in Python to process and analyze real-time malware artifacts capturedfrom Dockerized honeypots',
-    tags: ['Python','Docker','Machine Learning' , 'React.js', 'MITRE ATT\&CK',]
+    title: 'DeceptiSense: Threat Intelligence Pipeline (M.Tech Thesis)',
+    description: 'Scalable data pipeline to capture and analyze malware artifacts from containerized honeypots; custom Docker-layer file extraction. Automated threat classification using clustering algorithms integrated with the MITRE ATT&CK framework.',
+    tags: ['Python', 'Docker', 'Machine Learning', 'MITRE ATT&CK'],
+    githubUrl: 'https://github.com/Chaudharysumit07'
   },
-  
   {
-    title: 'CSCMM  Assessment Tool',
-    description: 'Led a 2-person team to design and implement a full-stack Cybersecurity Maturity assessment platform for a Govt. of India Project',
-    tags: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js', 'REST APIs']
+    title: 'CSCMM Assessment Tool',
+    description: 'Led a 2-person team to design and implement a full-stack Cybersecurity Maturity assessment platform for a Govt. of India project.',
+    tags: ['React.js', 'Node.js', 'PostgreSQL', 'Express.js', 'REST APIs'],
+    githubUrl: 'https://github.com/Chaudharysumit07'
   },
- 
   {
     title: 'Predictive Modeling for High-Dimensional Binary Classification',
-    description: 'Solved a complex binary classification challenge by building a custom SVM solver using primal gradient descent',
-    tags: ['Machine Learning','Gradient Descent Algorithm', 'SVM', 'Logisitic Regression','Python']
-  },
-   {
-    title: 'Kernel InfoTracker: Process and Thread Insights',
-    description: 'Designed a character device driver and integrated sysfs for efficient access to process attributes such as ID, priority, command name, parent ID, context switches, as well as thread count, open files, and max stack usage',
-    tags: ['C programming','Linux Kernel APIs', 'Device Drivers', 'Sysfs']
+    description: 'Binary classification using a custom SVM solver with primal gradient descent.',
+    tags: ['Machine Learning', 'Gradient Descent', 'SVM', 'Logistic Regression', 'Python'],
+    githubUrl: 'https://github.com/Chaudharysumit07/Breaking-3-XOR-PUF-using-ML-Linear-Model'
   },
   {
-    title: 'PCI Device Driver and User-Space Library for CryptoCard Integration',
-    description: 'Developed a device driver and user-space library to integrate CryptoCard, a PCI device for data encryption/decryption, into various application scenarios',
-    tags: ['C programming','Linux Kernel APIs', 'Device Drivers', 'PCI']
+    title: 'Kernel InfoTracker: Process and Thread Insights',
+    description: 'Character device driver and sysfs integration for process attributes: ID, priority, command name, parent ID, context switches, thread count, open files, and max stack usage.',
+    tags: ['C', 'Linux Kernel APIs', 'Device Drivers', 'Sysfs'],
+    githubUrl: 'https://github.com/Chaudharysumit07/Kernel-InfoTracker-Process-and-Thread-Insights'
   },
-   {
-    title: 'The Unified Kill Chain Navigator Tool ',
-    description: 'Created an enhanced iteration of the MITRE ATT&CK Navigator tool, centered around The Unified Kill Chain methodology and engineered an advanced attack mapping tool enabling visualization of cyber attack reports, unraveling attack-specific kill chains',
-    tags: ['MITRE ATT\&CK', 'Cybersecurity', 'React.js']
+  {
+    title: 'PCI Device Driver and User-Space Library for CryptoCard',
+    description: 'Device driver and user-space library to integrate CryptoCard (PCI) for data encryption/decryption into application scenarios.',
+    tags: ['C', 'Linux Kernel APIs', 'Device Drivers', 'PCI'],
+    githubUrl: 'https://github.com/Chaudharysumit07'
   },
-  
-
+  {
+    title: 'The Unified Kill Chain Navigator Tool',
+    description: 'Enhanced MITRE ATT&CK Navigator centered on The Unified Kill Chain—attack mapping and visualization of cyber attack reports and kill chains.',
+    tags: ['MITRE ATT&CK', 'Cybersecurity', 'React.js'],
+    githubUrl: 'https://github.com/Chaudharysumit07'
+  }
 ];
 
-const skills = ['Python','Machine Learning','LLM','Generative AI', 'NLP', 'React.js', 'Node.js', 'PyTorch', 'FastAPI', 'Docker','Streamlit' ,'Micro Services','Cybersecurity', 'SQL', 'Git','API Testing'];
+const skills = ['Python', 'C++', 'FastAPI', 'React.js', 'Node.js', 'PostgreSQL', 'MongoDB', 'Redis', 'Docker', 'RAG', 'LLM', 'Langchain', 'LlamaIndex', 'ChromaDB', 'FAISS', 'OpenSearch', 'Machine Learning', 'NLP', 'Generative AI', 'Microservices', 'Cybersecurity', 'MITRE ATT&CK', 'Git', 'Pytest', 'REST APIs'];
 
 const blogPosts = [
     {
@@ -113,10 +119,10 @@ const blogPosts = [
 
 
 // --- SVG Icons ---
-const GithubIcon = () => (
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-</svg>
+const GithubIcon = ({ className = '' }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" className={className} viewBox="0 0 16 16">
+    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+  </svg>
 );
 
 const LinkedinIcon = () => (
@@ -225,7 +231,7 @@ const HomePage = ({ onNavClick }) => {
                                      <div className="absolute -left-[38px] top-1.5 w-4 h-4 bg-gray-400 rounded-full border-4 border-white"></div>
                                     <h3 className="text-xl font-bold">{edu.degree}</h3>
                                     <p className="text-gray-500 mb-2">{edu.institution} | {edu.period}</p>
-                                    {/* <p className="text-gray-700">{edu.description}</p> */}
+                                    {edu.description && <p className="text-gray-700">{edu.description}</p>}
                                 </div>
                             ))}
                         </div>
@@ -235,7 +241,14 @@ const HomePage = ({ onNavClick }) => {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {projects.map((project, index) => (
                                 <div key={index} className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full">
-                                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                                    <div className="flex justify-between items-start gap-2 mb-2">
+                                        <h3 className="text-xl font-bold flex-grow">{project.title}</h3>
+                                        {project.githubUrl && (
+                                            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="shrink-0 text-gray-500 hover:text-black transition-colors" title="View  GitHub Repo" aria-label={`${project.title} on GitHub`}>
+                                                <GithubIcon className="w-6 h-6" />
+                                            </a>
+                                        )}
+                                    </div>
                                     <p className="text-gray-600 mb-4 flex-grow">{project.description}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {project.tags.map(tag => <span key={tag} className="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">{tag}</span>)}
